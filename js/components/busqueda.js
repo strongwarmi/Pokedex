@@ -11,7 +11,7 @@ const Search = (update) => {
     container.append(input);
     container.append(btnOrdenar);
     container.append(gridPokedex);
-    
+    //console.log(state.pokemon.pokemon_entries[0].entry_number);
     const inicio = filterByName(state.pokemon, "");
     Resultado(gridPokedex, inicio);
 
@@ -26,13 +26,16 @@ const Search = (update) => {
 }
 
 const cardPokemon = (e,update) => {
+    console.log(e);
+    console.log(state.pokemon.pokemon_entries[1].entry_number);
     const card = $('<div></div>');
-    const lblNombre = $('<p>' + e + '</p>');
-   // const img = $('<img src="http://serebii.net/art/th/' +state.pokemon.+ '.png" />')
+    const lblNombre = $('<p>' + e.pokemon_species.name + '</p>');
+    const img = $('<img src="http://serebii.net/art/th/' + e.entry_number+ '.png" />')
    // console.log(e.pokemon_species.name);
-   // card.append(img);
+    card.append(img);
     card.append(lblNombre);
     return card;
+    console.log(state.pokemon.pokemon_entries[0].entry_number);
     //
 }
 
