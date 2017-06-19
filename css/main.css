@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "FLexo";
+  src: local(Flexo-Bold), url("../fonts/Flexo/Flexo-Bold.otf") format("otf");
+}
+
+#search i{
+  padding-top: 1rem;
+}
+.pokemon{
+  height: 10rem;
+  width: 100%;
+  padding: 1.5rem;
+}
+.card-panel{
+    width: 18%;
+    display: inline-block;
+    margin-left: 2%;
+    padding: 0;
+}
+.controles{
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 70px solid #fff;
+  position: relative;
+  border-radius: 4%;
+}
+.controles p{
+  position: absolute;
+      bottom: -80px;
+      font-weight: bold;
+      left: 20%;
+}
+.controles img{
+  width: 15%;
+  height: auto;
+  position: absolute;
+  bottom: -30px;
+}
