@@ -16,48 +16,42 @@ const Search = (update) => {
     container.append(search);
     container.append(gridPokedex);
     section.append(container);
-    //console.log(state.pokemon.pokemon_entries[0].entry_number);
+
     const inicio = filterByName(state.pokemon, "");
     Resultado(gridPokedex, inicio);
 
     input.on('keyup', () => {
         const pokemonFiltrado = filterByName(state.pokemon, input.val());
-        //console.log(pokemonFiltrado);
         Resultado(gridPokedex, pokemonFiltrado);
-
     });
 
     return section;
-
 }
 
 const cardPokemon = (e,update) => {
-    //console.log(e);
-    //console.log(state.pokemon.pokemon_entries[1].entry_number);
     const name = e.pokemon_species.name;
     const card = $('<div class="card-panel small grey lighten-3 center-align"></div>');
+    const linkDetail = $('<a></<a>');
     const img = $('<img class="pokemon" src="http://serebii.net/art/th/' + e.entry_number+ '.png" />');
     const divControls = $('<div class="controles"></div>');
     //const fondo = $('<div class="fondo"></div>');
-    const pokeball = $('<img src="assets/icon/pokeball_gray.png">');
+    const pokeball = $('<img src="assets/icon/pokeball_gray.png"/>');
     $(pokeball).css("left","10%");
     const heart = $('<img src="assets/icon/valentines-heart.png">');
     $(heart).css("left","45%");
     const data = $('<img src="assets/icon/data.png">');
     $(data).css("right","10%");
-    const lblNombre = $('<p>' + name.charAt(0).toUpperCase() + name.slice(1) + '</p>');
+    const lblNombre = $('<p class="grey-text text-darken-2">' + name.charAt(0).toUpperCase() + name.slice(1) + '</p>');
 
    // console.log(e.pokemon_species.name);
     card.append(img);
-    //divControls.append(fondo);
     divControls.append(pokeball);
     divControls.append(heart);
     divControls.append(data);
     divControls.append(lblNombre);
     card.append(divControls);
+
     return card;
-    //console.log(state.pokemon.pokemon_entries[0].entry_number);
-    //
 }
 
 const Resultado = (gridPokedex, pokemonFiltrado) => {

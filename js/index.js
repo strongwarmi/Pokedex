@@ -1,7 +1,8 @@
 'use strict';
+
 const render = (root) => {
     root.empty();
-    // Append components    
+    // Append components
     root.append(Header());
     root.append(Search());
 };
